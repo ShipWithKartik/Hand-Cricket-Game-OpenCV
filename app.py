@@ -4,7 +4,6 @@ import numpy as np
 import mediapipe as mp
 import pickle
 import warnings
-import time
 
 warnings.filterwarnings("ignore")
 
@@ -23,10 +22,10 @@ word_to_num = {
 }
 
 def camera(index, wind_name, queue, stop_event, shared_predictions):
-    fm_model = hands.Hands(static_image_mode=True,
+    fm_model = hands.Hands(static_image_mode=False,
                            min_detection_confidence=0.9,
                            min_tracking_confidence=0.9,
-                           max_num_hands=4)
+                           max_num_hands=1)
 
     vid = cv2.VideoCapture(index)
     predictions = []
@@ -83,7 +82,7 @@ def camera(index, wind_name, queue, stop_event, shared_predictions):
         if len(predictions) >= 6:
             break
 
-        if cv2.waitKey(1) & 255 == ord('q'):
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     vid.release()

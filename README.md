@@ -38,25 +38,28 @@ A **gesture-based virtual cricket game** where players can bat and bowl using **
 ## Installation
 
 1. Cloning the repository
-``` python
-git clone https://github.com/your-username/gesture-cricket.git
-cd gesture-cricket
+``` bash
+git clone https://github.com/ShipWithKartik/Hand-Cricket-Game-OpenCV.git
+cd Hand-Cricket-Game-OpenCV
 ```
 2. Creating and activating the environment
-``` python
+``` bash
 # Create a virtual environment 
 python -m venv env
 
-# Activate it
+# Activate it (Linux/macOS)
 source env/bin/activate
+
+# Activate it (Windows)
+env\Scripts\activate
 
 ```
 3. Installing the dependencies
-``` python
+``` bash
 pip install -r requirements.txt
 ```
 
 4. Running the game
-``` python
+``` bash
 python app.py
 ```
